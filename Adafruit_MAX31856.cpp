@@ -96,7 +96,7 @@ boolean Adafruit_MAX31856::begin(void) {
   // assert on any fault
   writeRegister8(MAX31856_MASK_REG, 0x0);
   
-  writeRegister8(MAX31856_CR0_REG, MAX31856_CR0_OCFAULT0);
+  writeRegister8(MAX31856_CR0_REG, MAX31856_CR0_OCFAULT0 | MAX31856_CR0_AUTOCONVERT | MAX31856_CR0_FAULTCLR);
   setThermocoupleType(MAX31856_TCTYPE_K);
 
   return true;

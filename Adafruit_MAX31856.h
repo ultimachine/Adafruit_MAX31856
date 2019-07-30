@@ -109,7 +109,7 @@ class Adafruit_MAX31856 {
   void setTempFaultThreshholds(float flow, float fhigh);
   void setColdJunctionFaultThreshholds(int8_t low, int8_t high);
   void setNoiseFilter(max31856_noise_filter_t noiseFilter);
-
+  void     writeRegister8(uint8_t addr, uint8_t reg);
  private:
   int8_t _sclk, _miso, _mosi, _cs;
 
@@ -119,7 +119,7 @@ class Adafruit_MAX31856 {
   uint16_t readRegister16(uint8_t addr);
   uint32_t readRegister24(uint8_t addr);
 
-  void     writeRegister8(uint8_t addr, uint8_t reg);
+  //void     writeRegister8(uint8_t addr, uint8_t reg);
   uint8_t spixfer(uint8_t addr);
 };
 
